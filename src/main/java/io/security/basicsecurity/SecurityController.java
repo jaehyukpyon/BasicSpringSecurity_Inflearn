@@ -3,16 +3,16 @@ package io.security.basicsecurity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+//@RestController
 public class SecurityController {
 
-    @GetMapping(value = "/")
+    //@GetMapping(value = "/")
     public String index() {
         ;
         return "home";
     }
 
-    @GetMapping(value = "/loginPage")
+    //@GetMapping(value = "/loginPage")
     public String loginPage() {
         ;
         return "loginPage";
