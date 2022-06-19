@@ -7,6 +7,7 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RestController
@@ -44,8 +45,29 @@ public class SecurityController {
     }
 
     @GetMapping(value = "/nologin")
-    public String noLogin() {
-        ;
+    public String noLogin(HttpServletRequest request) {
+        request.changeSessionId(); // java.lang.IllegalStateException: Cannot change session ID. There is no session associated with this request.
+        HttpSession httpSession = request.getSession(false);
+
+        if (httpSession == null) {
+            System.out.println("null");
+        } else {
+            System.out.println("not null");
+        }
+
+        return "nologin";
+    }
+
+    @GetMapping(value = "/nologin2")
+    public String noLogin2(HttpServletRequest request) {
+        HttpSession httpSession = request.getSession(false);
+
+        if (httpSession == null) {
+            System.out.println("null"); // this line executed...
+        } else {
+            System.out.println("not null"); // not executed
+        }
+
         return "nologin";
     }
 
