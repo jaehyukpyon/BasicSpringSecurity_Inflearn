@@ -43,4 +43,10 @@ public class SecurityController {
         return "thread";
     }
 
+    @GetMapping(value = "/nologin")
+    public String noLogin() {
+        ;
+        return "nologin";
+    }
+
 }
