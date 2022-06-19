@@ -20,18 +20,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class SecurityConfig_11 extends WebSecurityConfigurerAdapter {
 
-    @Override
+    /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user").password("{noop}1111").roles("USER");
         auth.inMemoryAuthentication().withUser("sys").password("{noop}1111").roles("SYS");
         auth.inMemoryAuthentication().withUser("admin").password("{noop}1111").roles("ADMIN");
-    }
+    }*/
 
-    @Override
+    /*@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
@@ -56,14 +56,14 @@ public class SecurityConfig_11 extends WebSecurityConfigurerAdapter {
 
         http
                 .exceptionHandling()
-/*                .authenticationEntryPoint(new AuthenticationEntryPoint() {
+*//*                .authenticationEntryPoint(new AuthenticationEntryPoint() {
                     @Override
                     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
                         // 이 부분이 설정되어 있다면 스프링 시큐리티가 기본으로 적용해주는 /login 페이지가 작동하지 않는다.
                         System.out.println("인증 예외 발생!!!");
                         response.sendRedirect("/login");
                     }
-                })*/
+                })*//*
                 .accessDeniedHandler(new AccessDeniedHandler() {
                     @Override
                     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
@@ -71,6 +71,6 @@ public class SecurityConfig_11 extends WebSecurityConfigurerAdapter {
                         response.sendRedirect("/denied");
                     }
                 });
-    }
+    }*/
 
 }

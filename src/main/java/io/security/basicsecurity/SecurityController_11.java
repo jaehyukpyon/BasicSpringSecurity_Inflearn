@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SecurityController_11 {
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     public String index() {
         ;
         return "home";
@@ -27,7 +27,7 @@ public class SecurityController_11 {
     public String admin() {
         ;
         return "admin";
-    }
+    }*/
 
 
 }
