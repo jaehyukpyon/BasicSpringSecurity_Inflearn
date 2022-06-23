@@ -22,7 +22,7 @@ import java.io.IOException;
 
 //@Configuration
 //@EnableWebSecurity
-public class SecurityConfig_11 extends WebSecurityConfigurerAdapter {
+public class SecurityConfig_11 { // extends WebSecurityConfigurerAdapter {
 
     /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
